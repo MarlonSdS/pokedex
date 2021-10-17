@@ -10,8 +10,8 @@
       </div>
       
       <div >
-            <div v-for="(poke, index) in resultadoBusca" :key="index">
-              <pokemon :name="poke.name" :url="poke.url" :num="index+1"/>
+            <div v-for="(poke) in resultadoBusca" :key="poke.url">
+              <pokemon :name="poke.name" :url="poke.url" :num="poke.num"/>
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@ export default {
       if(this.busca == '' || this.busca == ' '){
         return this.pokemons;
       }else{
-        return this.pokemons.filter(pokemon => pokemon.name == this.busca)
+        return this.pokemons.filter(pokemon => pokemon.name.includes(this.busca))
       }
     }
   }

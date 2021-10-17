@@ -12,15 +12,13 @@
                 
             </div>
             <div class="media-content">
-                <p class="title is-4">{{num}} {{nameUpper}}</p>
+                <p class="title is-4">{{pokemon.num}} {{nameUpper}}</p>
                 <p class="subtitle is-6">{{pokemon.type}}</p>
             </div>
             </div>
 
             <div class="content">
                 <button class="button is-normal" @click="mudarSprite">Mudar Sprite</button>
-                LORems ispsiajsia sahidbiwuahiufsanfsoinoqniqufuiqbfuçfasnjfjans
-                asfkjfqoihjfuhaefiub
             </div>
         </div>
     </div>
@@ -38,7 +36,8 @@ export default {
             this.pokemon.front = res.data.sprites.front_default;
             this.pokemon.back = res.data.sprites.back_default;
             this.currentImg = res.data.sprites.front_default;
-            console.log(this.pokemon.type)
+            this.pokemon.num = res.data.game_indices[3].game_index;
+            console.log(this.pokemon.num)
             console.log(this.pokemon.back)
         })
     },
